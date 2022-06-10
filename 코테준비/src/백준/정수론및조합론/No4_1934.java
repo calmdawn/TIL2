@@ -15,10 +15,17 @@ public class No4_1934 {
             st = new StringTokenizer(br.readLine(), " ");
             int a = Integer.parseInt(st.nextToken());
             int b = Integer.parseInt(st.nextToken());
+            int gcd = getGcd(a, b);
+            bw.write(a * (b / gcd) + "\n");
         }
-
-
         bw.flush();
         bw.close();
+    }
+
+    private static int getGcd(int a, int b) {
+        if (a % b == 0)
+            return b;
+        else
+            return getGcd(b, a % b);
     }
 }
