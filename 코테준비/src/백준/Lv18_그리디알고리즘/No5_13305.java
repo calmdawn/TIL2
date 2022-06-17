@@ -21,10 +21,10 @@ public class No5_13305 {
         cityCost[0] = Integer.parseInt(st.nextToken());
 
         int cityIdx = 0;
-        int min = 0;
+        long min = 0;
         for (int i = 1; i < cityCost.length; i++) {
             cityCost[i] = Integer.parseInt(st.nextToken());
-            min = min + cityCost[cityIdx] * roadLen[i - 1];
+            min = min + (long)cityCost[cityIdx] * (long)roadLen[i - 1];
 
             if (cityCost[cityIdx] > cityCost[i])     //이전 도시보다 현재 도시의 주유값이 작은경우
                 cityIdx = i;
