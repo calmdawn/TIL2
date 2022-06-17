@@ -26,7 +26,7 @@ public class No5_13305 {
             cityCost[i] = Integer.parseInt(st.nextToken());
             min = min + cityCost[cityIdx] * roadLen[i - 1];
 
-            if (cityCost[i - 1] > cityCost[i])     //이전 도시보다 현재 도시의 주유값이 작은경우
+            if (cityCost[cityIdx] > cityCost[i])     //이전 도시보다 현재 도시의 주유값이 작은경우
                 cityIdx = i;
         }
 
