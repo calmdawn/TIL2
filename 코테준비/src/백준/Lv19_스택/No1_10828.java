@@ -32,7 +32,6 @@ public class No1_10828 {
         bw.close();
     }
 }
-
 class Node {
     public int data;
     public Node next;
@@ -84,3 +83,4 @@ class CustomStack {
             return top.data;
     }
 }
+
