@@ -11,7 +11,7 @@ public class No1_10828 {
         int N = Integer.parseInt(br.readLine());
         StringTokenizer st;
 
-        Stack stack = new Stack();
+        CustomStack stack = new CustomStack();
 
         for (int i = 0; i < N; i++) {
             st = new StringTokenizer(br.readLine());
@@ -42,7 +42,7 @@ class Node {
     }
 }
 
-class Stack {
+class CustomStack {
     private Node top;
 
     public void push(int item) {
