@@ -1,4 +1,4 @@
-package 백준.Lv20_큐;
+package 백준.Lv20_큐_덱;
 
 import java.io.*;
 import java.util.StringTokenizer;

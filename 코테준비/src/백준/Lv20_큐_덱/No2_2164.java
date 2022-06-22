@@ -1,9 +1,8 @@
-package 백준.Lv20_큐;
+package 백준.Lv20_큐_덱;
 
 import java.io.*;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.StringTokenizer;
 
 public class No2_2164 {
     public static void main(String[] args) throws IOException {
