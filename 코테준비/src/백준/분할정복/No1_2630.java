@@ -28,7 +28,7 @@ public class No1_2630 {
     }
 
     private static void getSquareColor(int[][] square, int row, int col, int N) {
-        if (checkSquare(square, 0, 0, N)) {
+        if (checkSquare(square, row, col, N)) {
             if (square[row][col] == 0)
                 white++;
             else
@@ -44,8 +44,8 @@ public class No1_2630 {
     private static boolean checkSquare(int[][] square, int row, int col, int N) {
         int color = square[row][col];
         boolean isCheck = true;
-        for (int i = row; i < row + N; row++) {
-            for (int j = col; j < col + N; col++) {
+        for (int i = row; i < row + N; i++) {
+            for (int j = col; j < col + N; j++) {
                 if (square[i][j] != color)
                     return false;
             }
