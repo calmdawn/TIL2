@@ -1,4 +1,4 @@
-package 백준.분할정복;
+package 백준.Lv21_분할정복;
 
 import java.io.*;
 import java.math.BigInteger;
