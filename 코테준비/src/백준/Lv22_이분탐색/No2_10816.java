@@ -25,49 +25,41 @@ public class No2_10816 {
         Arrays.sort(nNumbers);
 
         for (int i = 0; i < M; i++) {
-            int locate = getBinarySearch(nNumbers, mNumbers[i]);
-            if (locate == -1)
-                bw.write("0 ");
-            else
-                bw.write(searchCount(locate, nNumbers, mNumbers[i]) + " ");
+            bw.write(getUpperBinarySearch(nNumbers, mNumbers[i])
+                    - getLowerBinarySearch(nNumbers, mNumbers[i]) + " ");
         }
 
         bw.flush();
         bw.close();
     }
 
-    private static int searchCount(int locate, int[] nNumbers, int val) {
-        int cnt = 1;
-        int left = locate - 1;
-        int right = locate + 1;
-
-        //현위치에서 왼쪽 탐색
-        while (0 <= left && nNumbers[left] == val) {
-            cnt++;
-            left--;
-        }
-
-        //현위치에서 오른쪽 탐색
-        while (right < nNumbers.length && nNumbers[right] == val) {
-            cnt++;
-            right++;
-        }
-        return cnt;
-    }
-
-    private static int getBinarySearch(int[] nNumbers, int key) {
+    private static int getLowerBinarySearch(int[] nNumbers, int key) {
         int left = 0;
-        int right = nNumbers.length - 1;
-        while (left <= right) {
+        int right = nNumbers.length;
+
+        while (left < right) {
             int mid = (left + right) / 2;
-            if (nNumbers[mid] < key) {
-                left = mid + 1;
-            } else if (key < nNumbers[mid]) {
-                right = mid - 1;
+            if (key <= nNumbers[mid]) {
+                right = mid;
             } else {
-                return mid;
+                left = mid + 1;
             }
         }
-        return -1;
+        return left;
+    }
+
+
+    private static int getUpperBinarySearch(int[] nNumbers, int key) {
+        int left = 0;
+        int right = nNumbers.length;
+        while (left < right) {
+            int mid = (left + right) / 2;
+            if (key < nNumbers[mid]) {
+                right = mid;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return left;
     }
 }
