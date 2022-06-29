@@ -16,57 +16,32 @@ public class No1_1920 {
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < N; i++)
             nNums[i] = Integer.parseInt(st.nextToken());
+        Arrays.sort(nNums);
 
         int M = Integer.parseInt(br.readLine());
-        int[][] mNums = new int[M][3];  //원래값, 순서, 존재유무
         st = new StringTokenizer(br.readLine());
-        for (int i = 0; i < M; i++) {
-            mNums[i][0] = Integer.parseInt(st.nextToken());  //값
-            mNums[i][1] = i;  //처음위치의 순서
-        }
-
-        Arrays.sort(nNums);
-        Arrays.sort(mNums, new Comparator<int[]>() {
-            @Override
-            public int compare(int[] o1, int[] o2) {
-                if (o1[0] < o2[0])
-                    return -1;
-                else if (o1[0] == o2[0])
-                    return 0;
-                else
-                    return 1;
-            }
-        });
-
-        int nIdx = 0;
-        int mIdx = 0;
-        while (nIdx < N && mIdx < M) {
-            if (mNums[mIdx][0] == nNums[nIdx]) {
-                mNums[mIdx][2] = 1;
-                mIdx++;
-            } else if (mNums[mIdx][0] < nNums[nIdx]) {
-                mNums[mIdx][2] = 0;
-                mIdx++;
-            } else if (mNums[mIdx][0] > nNums[nIdx]) {
-                nIdx++;
-            }
-        }
-
-        Arrays.sort(mNums, new Comparator<int[]>() {
-            @Override
-            public int compare(int[] o1, int[] o2) {
-                if (o1[1] < o2[1])
-                    return -1;
-                else if (o1[1] == o2[1])
-                    return 0;
-                else
-                    return 1;
-            }
-        });
-
         for (int i = 0; i < M; i++)
-            bw.write(mNums[i][2] + " ");
+            bw.write(getBinarySearch(nNums, Integer.parseInt(st.nextToken())) + " ");
+
         bw.flush();
         bw.close();
+    }
+
+    private static String getBinarySearch(int[] nNums, int key) {
+        int left = 0;
+        int right = nNums.length - 1;
+
+        while (left <= right) {
+            int mid = (left + right) / 2;
+
+            if (key < nNums[mid]) {
+                right = mid-1;
+            } else if (key > nNums[mid]) {
+                left = mid+1;
+            } else {
+                return "1";
+            }
+        }
+        return "0";
     }
 }
