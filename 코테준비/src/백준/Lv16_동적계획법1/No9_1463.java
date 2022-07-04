@@ -1,6 +1,7 @@
 package 백준.Lv16_동적계획법1;
 
 import java.io.*;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class No9_1463 {
@@ -10,40 +11,21 @@ public class No9_1463 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        int N = Integer.parseInt(br.readLine());
-        num = new int[100001];
+        int X = Integer.parseInt(br.readLine());
+        num = new int[1000001];
+        num[0] = 0;
+        num[1] = 0;
 
-        getCount(N, 1);
+        for (int i = 2; i <= X; i++) {
+            num[i] = num[i - 1] + 1;
+            if (i % 3 == 0)
+                num[i] = Math.min(num[i / 3] + 1, num[i]);
+            if (i % 2 == 0)
+                num[i] = Math.min(num[i / 2] + 1, num[i]);
+        }
 
-        bw.write(String.valueOf(num[1]));
+        bw.write(String.valueOf(num[X]));
         bw.flush();
         bw.close();
-    }
-
-    private static void getCount(int n, int cnt) {
-        if (n == 1)
-            return;
-
-        if (n % 3 == 0) {
-            if (num[n / 3] == 0)
-                num[n / 3] = cnt;
-            else
-                num[n / 3] = Math.min(num[n / 3], cnt);
-            getCount(n / 3, cnt + 1);
-        }
-
-        if (n % 2 == 0) {
-            if (num[n / 2] == 0)
-                num[n / 2] = cnt;
-            else
-                num[n / 2] = Math.min(num[n / 2], cnt);
-            getCount(n / 2, cnt + 1);
-        }
-
-        if (num[n - 1] == 0)
-            num[n - 1] = cnt;
-        else
-            num[n - 1] = Math.min(num[n - 1], cnt);
-        getCount(n - 1, cnt + 1);
     }
 }
