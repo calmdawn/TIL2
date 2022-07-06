@@ -13,8 +13,6 @@ public class No8_11444 {
         long n = Long.parseLong(br.readLine());
 
         if (n == 1)
-
-
             bw.flush();
         bw.close();
     }
