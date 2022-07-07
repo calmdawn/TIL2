@@ -6,28 +6,30 @@ import java.util.StringTokenizer;
 
 public class No4_1629 {
 
-    static BigInteger A;
-    static BigInteger C;
-
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        A = new BigInteger(st.nextToken());
-        int B = Integer.parseInt(st.nextToken());
-        C = new BigInteger(st.nextToken());
+        long A = Long.parseLong(st.nextToken());
+        long B = Long.parseLong(st.nextToken());
+        long C = Long.parseLong(st.nextToken());
 
-        bw.write(getNum(B).mod(C).toString());
+        bw.write(String.valueOf(getNum(A, B, C)));
         bw.flush();
         bw.close();
     }
 
-    private static BigInteger getNum(int B) {
-        if (B == 0)
-            return BigInteger.ONE;
-        else
-            return A.multiply(getNum(B - 1));
+    private static long getNum(long a, long b, long c) {
+
+        if (b == 1)
+            return a % c;
+        long temp = getNum(a, b / 2, c);
+
+        if (b % 2 == 1)
+            return (temp % c * temp % c * a % c) % c;
+
+        return (temp % c * temp % c) % c;
     }
 }
