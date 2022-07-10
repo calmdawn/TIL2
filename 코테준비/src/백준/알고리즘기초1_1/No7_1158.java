@@ -22,17 +22,17 @@ public class No7_1158 {
 
         sb.append("<");
         while (!queue.isEmpty()) {
-            if (cnt == 3) {
+            if (queue.size() == 1) {
+                sb.append(queue.poll()).append(">");
+                break;
+            }
+
+            if (cnt == K) {
                 sb.append(queue.poll()).append(", ");
                 cnt = 1;
             } else {
                 queue.add(queue.poll());
                 cnt++;
-            }
-
-            if (queue.size() == 1) {
-                sb.append(queue.poll()).append(">");
-                break;
             }
         }
         bw.write(sb.toString());
