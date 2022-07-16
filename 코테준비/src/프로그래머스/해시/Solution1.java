@@ -2,7 +2,7 @@ package 프로그래머스.해시;
 
 import java.util.HashMap;
 
-class Solution {
+class Solution1 {
     public int solution(int[] nums) {
         int answer = 0;
         int N = nums.length;

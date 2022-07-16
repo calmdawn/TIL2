@@ -2,7 +2,7 @@ package 프로그래머스.해시;
 
 import java.util.HashMap;
 
-class Solution01 {
+class Solution2 {
     public String solution(String[] participant, String[] completion) {
         String answer = "";
 
