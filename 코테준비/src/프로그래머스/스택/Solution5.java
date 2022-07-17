@@ -1,8 +1,8 @@
 package 프로그래머스.스택;
 
 import java.util.*;
-
-class Solution1 {
+//Lv1 같은 숫자는 싫어
+class Solution5 {
     public int[] solution(int[] arr) {
         int[] answer;
         Stack<Integer> stack = new Stack<>();
