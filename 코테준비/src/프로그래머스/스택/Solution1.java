@@ -2,7 +2,7 @@ package 프로그래머스.스택;
 
 import java.util.Stack;
 //Lv2 기능개발
-class Solution {
+class Solution1 {
     public int[] solution(int[] progresses, int[] speeds) {
         int[] answer;
         int day = 0;
