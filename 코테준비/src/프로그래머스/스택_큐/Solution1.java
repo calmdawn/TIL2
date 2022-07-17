@@ -1,4 +1,4 @@
-package 프로그래머스.스택;
+package 프로그래머스.스택_큐;
 
 import java.util.Stack;
 //Lv2 기능개발

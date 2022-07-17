@@ -1,4 +1,4 @@
-package 프로그래머스.스택;
+package 프로그래머스.스택_큐;
 
 import java.util.*;
 //Lv1 같은 숫자는 싫어
