@@ -41,7 +41,6 @@ public class No1_3425 {
 
                 for (int j = 0; j < commandList.size(); j++) {
                     String command = commandList.get(j);
-                    isState = true;
 
                     if (command.equals("END"))
                         break;
@@ -133,8 +132,8 @@ public class No1_3425 {
             int firstNum = pop();
             int secondNum = pop();
 
-            num_x(secondNum);
             num_x(firstNum);
+            num_x(secondNum);
             return true;
         }
 
