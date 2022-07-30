@@ -3,7 +3,7 @@ package 백준.단계별로풀어보기.Lv20_큐_덱;
 import java.io.*;
 import java.util.*;
 
-public class No5_1021 {
+public class No6_1021 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
