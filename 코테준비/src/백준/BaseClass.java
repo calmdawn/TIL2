@@ -1,4 +1,4 @@
-package 백준.백준기타;
+package 백준;
 
 import java.io.*;
 
