@@ -4,8 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 //Lv2 땅따먹기
-class Solution {
-
+class Solution9 {
     int solution(int[][] land) {
         int answer = 0;
         answer = downBfs(land);
